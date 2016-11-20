@@ -1,0 +1,39 @@
+root: true
+env:
+  browser: true
+  es6: true
+  node: true
+  mocha: true
+extends:
+- airbnb
+parser: babel-eslint
+plugins:
+- react
+settings:
+  import/resolver:
+    node:
+      moduleDirectory:
+      - node_modules
+      - app_modules
+      - src
+rules:
+  max-len:
+  - error
+  - code: 200
+  arrow-parens:
+  - error
+  - always
+  linebreak-style:
+  - error
+  - unix
+  comma-dangle:
+    - error
+    - arrays: only-multiline
+      objects: only-multiline
+      imports: only-multiline
+      exports: only-multiline
+      functions: never
+  consistent-return:
+    - warn
+  react/forbid-prop-types:
+    - off
