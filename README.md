@@ -41,7 +41,7 @@ const mediaQuery = [{
   context: { size: S }
 }, {
   query: { minWidth: 0, maxWidth: 480 },
-  context: { size: XS }
+  context: () => ({ size: XS }) // can be a function
 }];
 
 //
@@ -70,7 +70,7 @@ const Viewport = () => (
 ## Props
 - `query` (Array) - Media queries to match against and context to provide if matched
   - `query` (String|Object) - Same as queries from  [react-responsive](https://github.com/contra/react-responsive)
-  - `context` (Mixed) - The value `media` context will be set to when matched
+  - `context` (Mixed|Function) - A value or function that will return a value that the `media` context will be set to when matched
 
 ## The catch...
 Because this simply wraps [react-responsive](https://github.com/contra/react-responsive) and [react-responsive-multi-query](https://github.com/michaelmitchell/react-responsive-multi-query) to build the media queries based on the principle of showing and hiding children you must make sure your media queries are unique otherwise your nested components will render more than once.

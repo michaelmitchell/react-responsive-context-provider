@@ -1,6 +1,6 @@
 {
   "name": "react-responsive-context-provider",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "asd",
   "homepage": "https://github.com/michaelmitchell/react-responsive-context-provider",
   "repository": {
@@ -75,6 +75,12 @@
     "lint": "./node_modules/.bin/eslint src test",
     "lint:fix": "npm run lint -- --fix",
     "pretest": "npm run lint",
+    "snyk": "./node_modules/.bin/snyk",
+    "snyk:auth": "npm run -s snyk -- auth $SNYK_TOKEN",
+    "snyk:monitor": "npm run snyk -- monitor",
+    "snyk:protect": "npm run snyk -- protect",
+    "snyk:test": "npm run snyk -- test",
+    "snyk:wizard": "npm run snyk -- wizard",
     "test": "npm run snyk:test && npm run test:js",
     "test:cov": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
     "test:js": "NODE_ENV=test ./node_modules/.bin/babel-node ./node_modules/.bin/babel-istanbul cover ./node_modules/.bin/_mocha",

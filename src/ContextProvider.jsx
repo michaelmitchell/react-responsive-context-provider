@@ -5,7 +5,7 @@ import { createElement, cloneElement, Component, PropTypes } from 'react';
 export default class ContextProvider extends Component {
 
   static propTypes = {
-    children: PropTypes.any.isRequired,
+    context: PropTypes.any,
   }
 
   static childContextTypes = {
@@ -14,14 +14,22 @@ export default class ContextProvider extends Component {
 
   getChildContext() {
     const {
-      children, // eslint-disable-line
-      ...moreProps } = this.props;
+      context,
+      children // eslint-disable-line
+      } = this.props;
 
-    return { media: moreProps };
+    //
+    const media = (typeof context === 'function')
+      ? context() : context;
+
+    //
+    return { media };
   }
 
   render() {
-    const { children } = this.props;
+    const {
+      children // eslint-disable-line
+      } = this.props;
 
     return children.length > 1
       ? createElement('div', {}, children)

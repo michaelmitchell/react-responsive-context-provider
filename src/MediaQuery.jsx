@@ -12,7 +12,9 @@ const MediaQuery = (props) => {
   // convert responsive query to multi query
   const multiQuery = query.map((v) => ({
     query: v.query,
-    props: v.context
+    props: {
+      context: v.context
+    }
   }));
 
   return (
