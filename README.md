@@ -83,3 +83,6 @@ But this is all I have time for right now and it works just fine for my purposes
 # License
 
 MIT
+
+---
+[![Donate](https://liberapay.com/assets/widgets/donate.svg)](https://liberapay.com/michaelmitchell/donate)
